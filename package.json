@@ -17,8 +17,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/medallia/medallia-shell"
+    "url": "https://bitbucket.org/mingtingzhen/react-proj-base/"
   },
+  "homepage": "https://bitbucket.org/mingtingzhen/react-proj-base/",
   "dependencies": {
     "express": "~4.9.7",
     "express-handlebars": "~1.1.0",

@@ -4,11 +4,14 @@
   "description": "Isomorphic React Project Base",
   "main": "app.js",
   "scripts": {
-    "watch": "watchify client/app.js -d -o dist/bundle.js",
-    "browserify": "browserify client/app.js -d -o dist/bundle.js",
+    "watch": "watchify client/app.js -d -o public/bundle.js",
+    "browserify": "browserify client/app.js -d -o public/bundle.js",
     "build": "npm run browserify",
-    "build-prod": "browserify client/app.js | uglifyjs > dist/bundle.js",
-    "start": "nodemon server/server"
+    "build-prod": "browserify client/app.js | uglifyjs > public/bundle.js",
+    "start": "nodemon server/server",
+    "lint": "jscs . && jshint .",
+    "jshint": "jshint .",
+    "jscs": "jscs ."
   },
   "author": "Tingzhen Ming",
   "license": "MIT",
@@ -26,6 +29,8 @@
   },
   "devDependencies": {
     "browserify": "^7.0.2",
+    "jscs": "^1.13.1",
+    "jshint": "^2.7.0",
     "nodemon": "^1.2.1",
     "precommit-hook": "^2.0.1",
     "reactify": "~0.14.0",

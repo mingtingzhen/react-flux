@@ -1,11 +1,9 @@
+"use strict";
+
 // Require our dependencies
 var express = require('express'),
 	exphbs = require('express-handlebars'),
-	http = require('http'),
-	path = require('path'),
-	mongoose = require('mongoose'),
-	routes = require('./routes'),
-	config = require('./config');
+	path = require('path');
 
 // Create an express instance
 var app = express();
@@ -29,7 +27,7 @@ app.disable('etag');
 require('./routes')(app);
 
 // Set /dist as our static content dir
-app.use('/dist', express.static(path.join(__dirname, '..', 'dist')));
+app.use('/', express.static(path.join(__dirname, '..', 'public')));
 
 // Start our server
 app.set('port', (process.env.PORT || 8080));

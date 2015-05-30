@@ -2,6 +2,6 @@
 
 require('./app.scss');
 
-module.exports = function(){
+module.exports = function() {
 	console.log('hello world');
-}
+};

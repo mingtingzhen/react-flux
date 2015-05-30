@@ -1,0 +1,1 @@
+Base project for setting up a reactjs project.

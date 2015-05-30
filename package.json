@@ -1,0 +1,42 @@
+{
+  "name": "react-proj",
+  "version": "0.0.0",
+  "description": "Isomorphic React Project Base",
+  "main": "app.js",
+  "scripts": {
+    "watch": "watchify client/app.js -d -o dist/bundle.js",
+    "browserify": "browserify client/app.js -d -o dist/bundle.js",
+    "build": "npm run browserify",
+    "build-prod": "browserify client/app.js | uglifyjs > dist/bundle.js",
+    "start": "nodemon server/server"
+  },
+  "author": "Tingzhen Ming",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/medallia/medallia-shell"
+  },
+  "dependencies": {
+    "express": "~4.9.7",
+    "express-handlebars": "~1.1.0",
+    "mongoose": "^3.8.23",
+    "node-jsx": "~0.11.0",
+    "react": "~0.11.2",
+    "socket.io": "^1.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^7.0.2",
+    "nodemon": "^1.2.1",
+    "precommit-hook": "^2.0.1",
+    "reactify": "~0.14.0",
+    "sassify": "0.5.2",
+    "uglify-js": "~2.4.15",
+    "watchify": "2.2.1"
+  },
+  "browserify": {
+    "transform": [
+      "sassify",
+      "reactify"
+    ]
+  }
+}

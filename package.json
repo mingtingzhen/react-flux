@@ -12,9 +12,7 @@
     "lint": "jscs . && jshint .",
     "jshint": "jshint .",
     "jscs": "jscs .",
-    "test": "npm run test-unit && npm run test-functional",
-    "test-unit": "mocha test/unit/*.spec.js",
-    "test-functional": "mocha test/functional/*.spec.js"
+    "test": "jest"
   },
   "author": "Tingzhen Ming",
   "license": "MIT",
@@ -29,17 +27,17 @@
     "mongoose": "^3.8.23",
     "mysql": "^2.7.0",
     "node-jsx": "~0.11.0",
-    "react": "~0.11.2",
+    "react": "^0.13.3",
+    "react-tools": "^0.13.3",
     "sequelize": "^3.1.1",
     "socket.io": "^1.1.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
     "browserify": "^7.0.2",
-    "expect.js": "^0.3.1",
+    "jest-cli": "^0.4.5",
     "jscs": "^1.13.1",
     "jshint": "^2.7.0",
-    "mocha": "^2.2.5",
     "nodemon": "^1.2.1",
     "precommit-hook": "^2.0.1",
     "reactify": "~0.14.0",
@@ -52,6 +50,12 @@
     "transform": [
       "sassify",
       "reactify"
+    ]
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
     ]
   }
 }

@@ -5,7 +5,10 @@
 		"beforeEach": true,
 		"afterEach": true,
 		"it": true,
-		"console": true
+		"console": true,
+		"jest": true,
+		"spyOn": true,
+		"expect": true
 	},
 	"browserify": true,
 	"bitwise": true,

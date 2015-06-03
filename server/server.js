@@ -20,8 +20,8 @@ app.set('view engine', 'hbs');
 // Disable etag headers on responses
 app.disable('etag');
 
-// Connect to our mongo database
-//mongoose.connect('mongodb://localhost/react-proj');
+// init db
+require('./models').setup();
 
 // init routes
 require('./routes')(app);

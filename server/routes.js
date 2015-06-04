@@ -1,9 +1,17 @@
 "use strict";
+var React = require('react');
+var JSX = require('node-jsx').install();
 
 var router = function(app) {
 	app.get('/', function(req, res) {
+		var App = require('../shared/components/App.react');
+		var markup = React.renderToStaticMarkup(React.createElement(App));
+		// todo - get initial state from backend service
+		var initialState = [1, 2, 3];
+
 	    res.render('index', {
-	        title: 'Skeleton react isophormic js app'
+	        markup: markup,
+	        state: JSON.stringify(initialState)
 	    });
 	});
 };

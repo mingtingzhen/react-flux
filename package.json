@@ -34,7 +34,7 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "browserify": "^7.0.2",
+    "browserify": "^10.2.3",
     "jest-cli": "^0.4.5",
     "jscs": "^1.13.1",
     "jshint": "^2.7.0",

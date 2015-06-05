@@ -4,7 +4,7 @@
 require('./app.scss');
 
 var React = require('react');
-var App = require('../shared/components/App.react.jsx');
+var App = require('../shared/components/App.jsx');
 
 // Snag the initial state that was passed from the server side
 var initialState = JSON.parse(document.getElementById('initial-state').innerHTML);

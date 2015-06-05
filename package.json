@@ -4,7 +4,7 @@
   "description": "Isomorphic React Project Base",
   "main": "app.js",
   "scripts": {
-    "watch": "watchify client/app.js -d -o public/bundle.js",
+    "watch": "watchify client/app.jsx -d -o public/bundle.js",
     "browserify": "browserify client/app.js -d -o public/bundle.js",
     "build": "npm run browserify",
     "build-prod": "browserify client/app.js | uglifyjs > public/bundle.js",
@@ -40,7 +40,7 @@
     "jshint": "^2.7.0",
     "nodemon": "^1.2.1",
     "precommit-hook": "^2.0.1",
-    "reactify": "~0.14.0",
+    "reactify": "^1.1.1",
     "sassify": "0.5.2",
     "sqlite3": "^3.0.8",
     "uglify-js": "~2.4.15",

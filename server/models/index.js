@@ -50,12 +50,17 @@ var db = function() {
 				}
 			});
 
-			// build relations
-			_.each(relationships, function(relation, name) {
-				_.each(relation, function(related, relName) {
-					models[name][relName](models[related]);
-				});
+		// create all tables
+		sequelize.sync().then(function() {
+			console.log('all tables created');
+		});
+
+		// build relations
+		_.each(relationships, function(relation, name) {
+			_.each(relation, function(related, relName) {
+				models[name][relName](models[related]);
 			});
+		});
 	}
 };
 

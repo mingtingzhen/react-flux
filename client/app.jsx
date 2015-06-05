@@ -4,13 +4,13 @@
 require('./app.scss');
 
 var React = require('react');
-var App = require('../shared/components/App.react');
+var App = require('../shared/components/App.react.jsx');
 
 // Snag the initial state that was passed from the server side
 var initialState = JSON.parse(document.getElementById('initial-state').innerHTML);
 
 // Render the components, picking up where react left off on the server
 React.render(
-	React.createElement(App, {models: initialState}),
+	<App models={initialState} />,
 	document.getElementById('react-app')
 );

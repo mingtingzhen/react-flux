@@ -19,5 +19,6 @@
 	"disallowKeywordsOnNewLine": ["else", "catch", "finally"],
 	"disallowTrailingWhitespace": true,
 	"requireBlocksOnNewline": true,
-	"excludeFiles": ["node_modules/**", "public/**", "coverage/**"]
+	"excludeFiles": ["node_modules/**", "public/**", "coverage/**"],
+	"esprima" : "esprima-fb"
 }

@@ -1,5 +1,7 @@
 "use strict";
 
+require('node-jsx').install();
+
 // Require our dependencies
 var express = require('express'),
 	exphbs = require('express-handlebars'),

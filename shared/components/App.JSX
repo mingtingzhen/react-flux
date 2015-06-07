@@ -35,6 +35,6 @@ module.exports = React.createClass({
 			<div className="main-app">
 				new app
 			</div>
-		)
+		);
 	}
 });

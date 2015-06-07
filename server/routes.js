@@ -1,18 +1,22 @@
 "use strict";
 var React = require('react');
-require('node-jsx').install();
+var ORM = require('./models');
 
 var router = function(app) {
+	var Tweet = ORM.model('Tweet');
+
 	app.get('/', function(req, res) {
 		var App = require('../shared/components/App.jsx');
-		var markup = React.renderToStaticMarkup(React.createElement(App));
-		// todo - get initial state from backend service
-		var initialState = [1, 2, 3];
 
-	    res.render('index', {
-	        markup: markup,
-	        state: JSON.stringify(initialState)
-	    });
+		Tweet.getTweets(0).then(function(data) {
+			var initialState = data;
+			var markup = React.renderToString(<App state={initialState}/>);
+
+			res.render('index', {
+				markup: markup,
+				state: JSON.stringify(initialState)
+			});
+		});
 	});
 };
 

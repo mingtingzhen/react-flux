@@ -4,6 +4,7 @@ var Sequelize = require("sequelize");
 
 module.exports = {
 	model: {
+		id: Sequelize.INTEGER,
 		twid: Sequelize.STRING,
 		active: Sequelize.BOOLEAN,
 		author: Sequelize.STRING,
@@ -14,10 +15,14 @@ module.exports = {
 	},
 	options: {
 		classMethods: {
-			getTweets: function(page, skip, callBack) {
-				console.log(page, skip, callBack);
+			getTweets: function(page) {
+				return this.findAll({
+					offset: this.limit * page + 1,
+					limit: this.limit
+				});
 			}
-		}
+		},
+		limit: 10
 	},
 	relations: {
 

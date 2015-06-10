@@ -8,6 +8,7 @@
     "build": "browserify client/app.jsx -d -o public/bundle.js",
     "build-prod": "browserify client/app.jsx | uglifyjs > public/bundle.js",
     "start": "nodemon server/server",
+    "postinstall": "npm run build",
     "lint": "jscs . && jsxhint .",
     "jshint": "jsxhint .",
     "jscs": "jscs .",
@@ -30,22 +31,22 @@
     "react-tools": "^0.13.3",
     "sequelize": "^3.1.1",
     "socket.io": "^1.1.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "browserify": "^10.2.3",
+    "nodemon": "^1.2.1",
+    "reactify": "^1.1.1",
+    "sassify": "0.5.2",
+    "sqlite3": "^3.0.8",
+    "watchify": "2.2.1"
   },
   "devDependencies": {
-    "browserify": "^10.2.3",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
     "jest-cli": "^0.4.5",
     "jscs": "^1.13.1",
     "jshint": "^2.7.0",
     "jsxhint": "^0.15.1",
-    "nodemon": "^1.2.1",
     "precommit-hook": "^2.0.1",
-    "reactify": "^1.1.1",
-    "sassify": "0.5.2",
-    "sqlite3": "^3.0.8",
-    "uglify-js": "~2.4.15",
-    "watchify": "2.2.1"
+    "uglify-js": "~2.4.15"
   },
   "browserify": {
     "transform": [
@@ -58,5 +59,8 @@
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react"
     ]
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }

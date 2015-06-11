@@ -17,7 +17,11 @@ var db = function() {
 			password = config.password || null,
 			options = config.options;
 
-		sequelize = new Sequelize(dbName, username, password, options);
+		if (env === 'development') {
+			sequelize = new Sequelize(dbName, username, password, options);
+		} else {
+			sequelize = new Sequelize(process.env.DATABASE_URL);
+		}
 
 		init();
 

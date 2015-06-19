@@ -1,1 +1,1 @@
-Base project for setting up a reactjs project.
+Example app for using react FLUX architecture. Link here https://scotch.io/tutorials/creating-a-simple-shopping-cart-with-react-js-and-flux.

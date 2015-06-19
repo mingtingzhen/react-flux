@@ -4,18 +4,11 @@ var Sequelize = require("sequelize");
 
 module.exports = {
 	model: {
-		id: Sequelize.INTEGER,
-		twid: Sequelize.STRING,
-		active: Sequelize.BOOLEAN,
-		author: Sequelize.STRING,
-		avatar: Sequelize.STRING,
-		body: Sequelize.STRING,
-		date: Sequelize.DATE,
-		screenname: Sequelize.STRING
+		id: Sequelize.INTEGER
 	},
 	options: {
 		classMethods: {
-			getTweets: function(page) {
+			getProducts: function(page) {
 				return this.findAll({
 					offset: this.limit * page + 1,
 					limit: this.limit

@@ -1,6 +1,6 @@
 {
   "name": "react-flux",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shopping cart app built using react and its flux architecture",
   "main": "client/app.jsx",
   "scripts": {

@@ -11,6 +11,6 @@ var initialState = JSON.parse(document.getElementById('initial-state').innerHTML
 
 // Render the components, picking up where react left off on the server
 React.render(
-	<App models={initialState} />,
+	<App products={initialState} />,
 	document.getElementById('react-flux-app')
 );

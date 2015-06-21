@@ -1,7 +1,6 @@
 "use strict";
 var React = require('react');
 var ORM = require('./models');
-var productData = require('./mocks/ProductData');
 
 var router = function(app) {
 	var Product = ORM.model('Product');
@@ -11,9 +10,9 @@ var router = function(app) {
 
 		Product.getProducts(0).then(function(data) {
 			// force to use mock data
-			data = productData;
+			data = require('./mocks/ProductData');
 			var initialState = data;
-			var markup = React.renderToString(<App state={initialState}/>);
+			var markup = React.renderToString(<App products={initialState}/>);
 
 			res.render('index', {
 				markup: markup,

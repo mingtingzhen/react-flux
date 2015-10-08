@@ -4,7 +4,7 @@ var Sequelize = require("sequelize");
 
 module.exports = {
 	model: {
-		id: Sequelize.INTEGER
+		id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true}
 	},
 	options: {
 		classMethods: {

@@ -53,7 +53,6 @@ module.exports = React.createClass({
 	render: function(){
 		return (
 			<div className="main-app">
-				new app
 				<Product products={this.state.products} 
 						product={this.state.selectedProduct} 
 						cartItems={this.state.cartItems} />
